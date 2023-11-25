@@ -1,20 +1,20 @@
 import { NavLink } from "react-router-dom";
 import { IoLogInOutline } from "react-icons/io5";
-
+import { MdOutlineRealEstateAgent } from "react-icons/md";
 const Navbar = () => {
 
     const navLinks = <>
         <NavLink to='/' className={({ isActive }) => (isActive ? ' text-xl font-bold  text-[#9AD0C2] mr-4' : ' text-xl  font-bold  mr-4')}>Home</NavLink>
         <NavLink to='/apartment' className={({ isActive }) => (isActive ? ' text-xl font-bold  text-[#9AD0C2] mr-4' : ' text-xl  font-bold  mr-4')}>Apartment</NavLink>
         <div className="flex flex-row items-center">
-        <IoLogInOutline className="text-xl font-bold" />
-        <NavLink to='/login' className={({ isActive }) => (isActive ? ' text-xl font-bold  text-[#9AD0C2] mr-4' : ' text-xl  font-bold  mr-4')}>Login</NavLink>
+            <IoLogInOutline className="text-xl font-bold" />
+            <NavLink to='/login' className={({ isActive }) => (isActive ? ' text-xl font-bold  text-[#9AD0C2] mr-4' : ' text-xl  font-bold  mr-4')}>Login</NavLink>
         </div>
-        
+
 
     </>
     return (
-        <div className="navbar bg-[#265073] p-4">
+        <div className="navbar bg-[#265073] p-4 fixed z-10 bg-opacity-80">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -25,7 +25,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="flex flex-row gap-4 items-center">
-                    <img className="w-[50px] h-[50px] bg-[#ECF4D6]" src="https://i.ibb.co/CMkbCP6/Letter-Ak-Home-Logo.jpg" alt="" />
+                    <MdOutlineRealEstateAgent className="w-[50px] h-[50px] text-[#ECF4D6]"/>
                     <p className=" text-2xl text-[#ECF4D6]">Apex-Kare-Estates</p>
                 </div>
 
