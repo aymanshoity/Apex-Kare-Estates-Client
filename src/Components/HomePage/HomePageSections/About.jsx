@@ -3,7 +3,7 @@ import SharedHeadings from "../../SharedComponents/SharedHeadings";
 
 const About = () => {
     return (
-        <div className="my-60">
+        <div className="my-40">
             <SharedHeadings heading={'About Us'} subheading={'Who we are?'}></SharedHeadings>
             <div className="hero min-h-screen bg-fixed" style={{ backgroundImage: 'url(https://i.ibb.co/WBSPbZ2/pexels-pixabay-276724.jpg)' }}>
                 <div className="hero-overlay bg-[#265073] bg-opacity-60"></div>

@@ -1,0 +1,23 @@
+[
+    {
+      "title": "Card 1",
+      "description": "This is the first card. It has a description that provides information about the content of the card.",
+      "image": "https://i.ibb.co/WBSPbZ2/pexels-pixabay-276724.jpgs"
+    },
+    {
+      "title": "Card 2",
+      "description": "The second card comes with its own unique title and a detailed description explaining its purpose and content.",
+      "image": "https://i.ibb.co/WBSPbZ2/pexels-pixabay-276724.jpgs"
+    },
+    {
+      "title": "Card 3",
+      "description": "Card 3 has its own title and a description that gives users insights into what they can expect to find within this card.",
+      "image": "https://i.ibb.co/WBSPbZ2/pexels-pixabay-276724.jpgs"
+    },
+    {
+      "title": "Card 4",
+      "description": "The fourth card in the array is distinct with its title and description, offering another piece of content for users to explore.",
+      "image": "https://i.ibb.co/WBSPbZ2/pexels-pixabay-276724.jpgs"
+    }
+  ]
+  

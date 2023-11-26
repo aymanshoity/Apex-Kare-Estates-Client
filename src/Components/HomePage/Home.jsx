@@ -2,6 +2,7 @@ import About from "./HomePageSections/About";
 import ApartmentLocation from "./HomePageSections/ApartmentLocation";
 import Banner from "./HomePageSections/Banner";
 import CouponSection from "./HomePageSections/CouponSection";
+import Coupons from "./HomePageSections/Coupons";
 import Footer from "./HomePageSections/Footer";
 
 
