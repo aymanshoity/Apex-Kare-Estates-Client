@@ -6,7 +6,7 @@ const Footer = () => {
             <aside>
                 <MdOutlineRealEstateAgent className="w-[50px] h-[50px] text-[#ECF4D6]" />
                 <p className="font-bold">
-                    Apex-Kare-Estates <br />Providing reliable tech since 1992
+                    Apex-Kare-Estates <br />Empowering Homes, Building Dreams
                 </p>
                 <p>Copyright © 2023 - All right reserved</p>
             </aside>
