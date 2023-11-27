@@ -2,7 +2,7 @@
 
 const SharedHeadings = ({heading,subheading}) => {
     return (
-        <div className="w-3/12  mx-auto">
+        <div className="w-3/12  mx-auto flex flex-col justify-center items-center">
             <p className='text-center text-[#265073] text-xl font-bold '>{subheading}</p>
 
 

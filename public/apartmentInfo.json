@@ -1,0 +1,30 @@
+[
+    {
+        "apartmentImage": "https://i.ibb.co/SfMc8DJ/Two-Bedroom-Bungalow-House-Design-Master-En-suite-Muthurwa-com.jpg", "floorNo": 1, "blockName": "A", "apartmentNo": "101", "rent": 1200,"status":"Available"
+    },
+    {
+        "apartmentImage": "https://i.ibb.co/ph16cS4/f28d716b-4287-4b42-8bcc-90dc20b9dac1.jpg", "floorNo": 1, "blockName": "A", "apartmentNo": "102", "rent": 1100,"status":"Available"
+    },
+    {
+        "apartmentImage": "https://i.ibb.co/M5WNTbR/Atifkhan223-I-will-make-isometric-3d-render-floor-plan-interior-exterior-for-10-on-fiverr-com.jpg", "floorNo": 1, "blockName": "A", "apartmentNo": "103", "rent": 1150,"status":"Available"
+    },
+    
+    {
+        "apartmentImage": "https://i.ibb.co/M89VKRW/359e21ef-7f0a-4dcf-8e37-3f8ed58a5dc8.jpg", "floorNo": 2, "blockName": "B", "apartmentNo": "201", "rent": 1300,"status":"Available"
+    },
+    {"apartmentImage": "https://i.ibb.co/Y7Y8WDn/3cab5236-ae27-4ada-a437-1ba0fff51051.jpg", "floorNo": 2, "blockName": "B", "apartmentNo": "202", "rent": 1250},
+    {"apartmentImage": "https://i.ibb.co/F76GMkq/Planta-3-D.jpg", "floorNo": 2, "blockName": "B", "apartmentNo": "203", "rent": 1280,"status":"Available"},
+    
+    {"apartmentImage": "https://i.ibb.co/nQWVYN5/3-D-Floor-Plans-1.jpg", "floorNo": 3, "blockName": "C", "apartmentNo": "301", "rent": 1400,"status":"Available"},
+    {"apartmentImage": "https://i.ibb.co/89S8CCz/a963ec10-f373-4011-8f93-7a7a10117131.jpg", "floorNo": 3, "blockName": "C", "apartmentNo": "302", "rent": 1380},
+    {"apartmentImage": "https://i.ibb.co/j514GTC/3-D-Floor-Plans.jpg", "floorNo": 3, "blockName": "C", "apartmentNo": "303", "rent": 1420,"status":"Available"},
+    
+    {"apartmentImage": "https://i.ibb.co/hZGcqXz/DM-us-for-house-planning-and-elevation-naksha4house-How-s-this-Turn-On-POST-Notification-for-more-ar.jpg", "floorNo": 4, "blockName": "D", "apartmentNo": "401", "rent": 1500,"status":"Available"},
+    {"apartmentImage": "https://i.ibb.co/QCzYWdt/15-modern-bedroom-house-plans-decorating-ideas-modern-house-and-floor-plans-jpg.jpg", "floorNo": 4, "blockName": "D", "apartmentNo": "402", "rent": 1480,"status":"Available"},
+    {"apartmentImage": "https://i.ibb.co/hf7xhGY/Standard-Dimensional-Requirements-of-Building-Components-The-Constructor.jpg", "floorNo": 4, "blockName": "D", "apartmentNo": "403", "rent": 1520,"status":"Available"},
+    
+    {"apartmentImage": "https://i.ibb.co/X4GKny4/4-Bedroom-Apartment-House-Plans.jpg", "floorNo": 5, "blockName": "E", "apartmentNo": "501", "rent": 1600,"status":"Available"},
+    {"apartmentImage": "https://i.ibb.co/R7DHQwz/Abd-design-hub-I-will-create-nice-3d-floor-plans-interiors-and-exteriors-for-10-on-fiverr-com.jpg", "floorNo": 5, "blockName": "E", "apartmentNo": "502", "rent": 1580,"status":"Available"},
+    {"apartmentImage": "https://i.ibb.co/SfMc8DJ/Two-Bedroom-Bungalow-House-Design-Master-En-suite-Muthurwa-com.jpg", "floorNo": 5, "blockName": "E", "apartmentNo": "503", "rent": 1620,"status":"Available"}
+  ]
+  

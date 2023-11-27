@@ -7,7 +7,7 @@ const ApartmentLocation = () => {
         <div className="my-20">
             <SharedHeadings subheading={"Find Us"} heading={'Our Location'}></SharedHeadings>
             <div>
-                <div className="hero w-full h-[400px] bg-[#265073]" style={{ backgroundImage: 'url(https://i.ibb.co/kKrmvzX/Gulshan.png)' }}>
+                <div className="hero w-full h-[400px] bg-[#265073] bg-fixed" style={{ backgroundImage: 'url(https://i.ibb.co/kKrmvzX/Gulshan.png)' }}>
                     <div className="hero-overlay bg-opacity-80"></div>
                     <div className="hero-content text-center text-neutral-content">
                         <div className="max-w-lg">

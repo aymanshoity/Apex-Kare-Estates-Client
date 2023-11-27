@@ -1,18 +1,50 @@
-import { NavLink } from "react-router-dom";
-import { IoLogInOutline } from "react-icons/io5";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import { IoLogInOutline, IoLogOutOutline } from "react-icons/io5";
 import { MdOutlineRealEstateAgent } from "react-icons/md";
+import { useContext } from "react";
+import { AuthContext } from "../Provider/AuthProvider";
 const Navbar = () => {
-
+    const navigate = useNavigate()
+    const { user, logOut } = useContext(AuthContext)
+    const handleLogout = () => {
+        logOut()
+            .then()
+            .catch(error => console.log(error))
+        navigate('/')
+    }
     const navLinks = <>
-        <NavLink to='/' className={({ isActive }) => (isActive ? ' text-xl font-bold  text-[#9AD0C2] mr-4' : ' text-xl  font-bold  mr-4')}>Home</NavLink>
-        <NavLink to='/apartment' className={({ isActive }) => (isActive ? ' text-xl font-bold  text-[#9AD0C2] mr-4' : ' text-xl  font-bold  mr-4')}>Apartment</NavLink>
-        <div className="flex flex-row items-center">
-            <IoLogInOutline className="text-xl font-bold" />
-            <NavLink to='/login' className={({ isActive }) => (isActive ? ' text-xl font-bold  text-[#9AD0C2] mr-4' : ' text-xl  font-bold  mr-4')}>Login</NavLink>
+        <div className="flex flex-row items-center justify-center">
+            <NavLink to='/' className={({ isActive }) => (isActive ? ' text-xl font-bold  text-[#9AD0C2] mr-4' : ' text-xl  font-bold  mr-4')}>Home</NavLink>
+            <NavLink to='/apartments' className={({ isActive }) => (isActive ? ' text-xl font-bold  text-[#9AD0C2] mr-4' : ' text-xl  font-bold  mr-4')}>Apartment</NavLink>
+
+            {
+                user ? <>
+                    <div className="flex flex-row items-center justify-center">
+                        <IoLogOutOutline className="text-2xl font-extrabold mr-2" />
+                        <div className="dropdown text-[#265073] ">
+                            <div tabIndex={0} role="button" className=" m-1"><img className="w-[30px] h-[30px] rounded-full" src={user?.photoURL} alt="" /></div>
+                            <ul className="dropdown-content z-[1] menu p-2 shadow bg-[#ECF4D6] rounded-box w-52 flex flex-col">
+                                <p className="text-xl font-bold">{user.displayName}</p>
+                                <NavLink to='/dashboard' className={({ isActive }) => (isActive ? ' text-xl font-bold  text-[#9AD0C2] mr-4' : ' text-xl  font-bold  mr-4')}>Dashboard</NavLink>
+                                <button onClick={handleLogout} className=" text-xl font-bold">Logout</button>
+                                
+                            </ul>
+                        </div>
+
+                    </div>
+
+
+                </> : <>
+                    <div className="flex flex-row items-center justify-center">
+                        <IoLogInOutline className="text-2xl font-bold" />
+                        <NavLink to='/login' className={({ isActive }) => (isActive ? ' text-xl font-bold  text-[#9AD0C2] mr-4' : ' text-xl  font-bold  mr-4')}>Login</NavLink>
+                    </div>
+
+                </>
+            }
         </div>
-
-
     </>
+
     return (
         <div className="navbar bg-[#265073] p-4 fixed z-10 bg-opacity-80">
             <div className="navbar-start">
@@ -25,7 +57,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="flex flex-row gap-4 items-center">
-                    <MdOutlineRealEstateAgent className="w-[50px] h-[50px] text-[#ECF4D6]"/>
+                    <MdOutlineRealEstateAgent className="w-[50px] h-[50px] text-[#ECF4D6]" />
                     <p className=" text-2xl text-[#ECF4D6]">Apex-Kare-Estates</p>
                 </div>
 
@@ -37,7 +69,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn bg-[#ECF4D6] text-xl  font-bold text-[#265073]">Register</a>
+                <Link to='/register'><a className="btn bg-[#ECF4D6] text-xl  font-bold text-[#265073]">Register</a></Link>
             </div>
         </div>
     );
