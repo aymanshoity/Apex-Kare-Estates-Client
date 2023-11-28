@@ -13,7 +13,7 @@ const Appartments = () => {
     const navigate=useNavigate()
     const {user}=useContext(AuthContext)
     const axiosPublic=UseAxiosPublic()
-    const {data: apartments=[]}=useQuery({
+    const {data: apartments=[],refetch}=useQuery({
         queryKey: ['apartments'],
         queryFn:async()=>{
             const res=await axiosPublic.get('/apartments')
@@ -33,9 +33,11 @@ const Appartments = () => {
                 blockName:apartment.blockName,
                 apartmentNo:apartment.apartmentNo,
                 rent:apartment.rent,
+                date:new Date().toLocaleString().split(',')[0],
+                role:"user",
                 status:"Pending",
             }
-            fetch('https://apex-kare-estates-server.vercel.app/agreementRequests', {
+            fetch('http://localhost:5000/agreementRequests', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
@@ -47,6 +49,8 @@ const Appartments = () => {
                         console.log(data)
                         if(data.insertedId){
                             Swal.fire("Agreement Request is sent Successfully");
+                            refetch()
+                            
                         }
                         
                     })

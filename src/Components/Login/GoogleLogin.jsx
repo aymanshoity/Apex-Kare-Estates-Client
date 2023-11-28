@@ -17,9 +17,9 @@ const GoogleLogin = () => {
                 const loggedUser = {
                     name: result.user.displayName,
                     email: result.user.email,
-                    photo: result.user.photoURL
+                    photo: result.user.photoURL,
                 }
-                fetch('https://apex-kare-estates-server.vercel.app/accountHolders', {
+                fetch('http://localhost:5000/accountHolders', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
