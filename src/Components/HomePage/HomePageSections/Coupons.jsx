@@ -1,16 +1,19 @@
-import React from 'react';
 
-const Coupons = ({card}) => {
-    const {title,image,description}=card
+import { Link } from 'react-router-dom';
+
+const Coupons = ({coupons}) => {
+    const {coupon_code,discount_percent,valid_from,valid_until,description,image_url}=coupons
     return (
-        <div className="card glass bg-[#265073] ">
-            <figure><img className='' src={image} alt="car!" /></figure>
+        <div className="card glass  bg-[#265073] ">
+            <figure><img className='h-[250px]' src={image_url} /></figure>
             <div className="card-body ">
-                <h2 className="card-title text-[#ECF4D6]">Great Deals</h2>
-                <h2 className="card-title text-[#ECF4D6]">Up to 40% discount</h2>
-                <p className='text-[#ECF4D6]'>Why are you waiting?</p>
+                <h2 className="card-title text-[#ECF4D6]">Great Deal: {discount_percent}% discount</h2>
+                <h2 className="card-title text-[#ECF4D6]">Valid:{valid_from} -{valid_until} </h2>
+                <h2 className="card-title text-[#ECF4D6]">Code :{coupon_code}  </h2>
+                <p className='text-[#ECF4D6]'>{description}</p>
+                <p className='text-[#ECF4D6]'>Why are you waiting? hurry!!</p>
                 <div className="card-actions justify-end">
-                    <button className="btn bg-[#9AD0C2] text-[#265073] rounded-full fancy text-2xl">Rent Today</button>
+                    <Link to='/apartments'><button className="btn bg-[#9AD0C2] text-[#265073] rounded-full fancy text-2xl">Rent Today</button></Link>
                 </div>
 
             </div>

@@ -1,23 +1,42 @@
 [
-    {
-      "title": "Card 1",
-      "description": "This is the first card. It has a description that provides information about the content of the card.",
-      "image": "https://i.ibb.co/WBSPbZ2/pexels-pixabay-276724.jpgs"
-    },
-    {
-      "title": "Card 2",
-      "description": "The second card comes with its own unique title and a detailed description explaining its purpose and content.",
-      "image": "https://i.ibb.co/WBSPbZ2/pexels-pixabay-276724.jpgs"
-    },
-    {
-      "title": "Card 3",
-      "description": "Card 3 has its own title and a description that gives users insights into what they can expect to find within this card.",
-      "image": "https://i.ibb.co/WBSPbZ2/pexels-pixabay-276724.jpgs"
-    },
-    {
-      "title": "Card 4",
-      "description": "The fourth card in the array is distinct with its title and description, offering another piece of content for users to explore.",
-      "image": "https://i.ibb.co/WBSPbZ2/pexels-pixabay-276724.jpgs"
-    }
-  ]
-  
+  {
+    "coupon_code": "BMSAVE10",
+    "discount_percent": 10,
+    "valid_from": "01/01/2023",
+    "valid_until": "31/12/2023",
+    "description": "Get 10% off on building management services with this coupon.",
+    "image_url": "https://i.ibb.co/WBSPbZ2/pexels-pixabay-276724.jpg"
+  },
+  {
+    "coupon_code": "BM20OFF",
+    "discount_percent": 20,
+    "valid_from": "01/03/2023",
+    "valid_until": "30/11/2023",
+    "description": "Enjoy a 20% discount on selected building services throughout March.",
+    "image_url": "https://i.ibb.co/b1ZtL1Z/pexels-pixabay-271624.jpg"
+  },
+  {
+    "coupon_code": "FREEMONTH",
+    "discount_percent": 100,
+    "valid_from": "15/02/2023",
+    "valid_until": "28/02/2023",
+    "description": "Special offer: Get a free month of building management services!",
+    "image_url": "https://i.ibb.co/ygXvBMW/pexels-max-rahubovskiy-6315808.jpg"
+  },
+  {
+    "coupon_code": "EARLYBIRD",
+    "discount_percent": 15,
+    "valid_from": "15/01/2023",
+    "valid_until": "28/02/2023",
+    "description": "Early birds get an extra 15% off on selected services this month.",
+    "image_url": "https://i.ibb.co/7v0cfQL/pexels-max-rahubovskiy-5997967.jpg"
+  },
+  {
+    "coupon_code": "BMDISCOUNT",
+    "discount_percent": 25,
+    "valid_from": "01/04/2023",
+    "valid_until": "30/06/2023",
+    "description": "Limited-time offer: Save 25% on building management fees in April and June.",
+    "image_url": "https://i.ibb.co/CmyMMh9/pexels-max-rahubovskiy-6283961.jpg"
+  }
+]
