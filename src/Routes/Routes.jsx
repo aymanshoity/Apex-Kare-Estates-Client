@@ -17,6 +17,7 @@ import MemberProfile from "../Components/Dashboard/Member/memberProfile";
 import MakeAnnouncement from "../Components/Dashboard/Announcements/MakeAnnouncement/MakeAnnouncement";
 import UserProfile from "../Components/Dashboard/User/UserProfile";
 import ManageMembers from "../Components/Dashboard/ManageMembers/ManageMembers";
+import ManageCoupon from "../Components/Dashboard/ManageCoupon/ManageCoupon";
 
 const Routes = createBrowserRouter([
   {
@@ -40,7 +41,7 @@ const Routes = createBrowserRouter([
       { path: '/dashboard/agreementRequests', element:<AdminRoute><AgreementRequests></AgreementRequests></AdminRoute>},
       { path: '/dashboard/makeAnnouncements', element:<AdminRoute><MakeAnnouncement></MakeAnnouncement></AdminRoute>},
       { path: '/dashboard/manageMembers', element:<AdminRoute><ManageMembers></ManageMembers></AdminRoute>},
-      { path: '/dashboard/manageCoupons', element:<AdminRoute><ManageMembers></ManageMembers></AdminRoute>},
+      { path: '/dashboard/manageCoupons', element:<AdminRoute><ManageCoupon></ManageCoupon></AdminRoute>},
       { path: '/dashboard/announcements', element:<PrivateRoute><Announcements></Announcements></PrivateRoute>},
       { path: '/dashboard/memberProfile', element:<PrivateRoute> <MemberProfile></MemberProfile></PrivateRoute>},
       { path: '/dashboard/userProfile', element:<PrivateRoute> <UserProfile></UserProfile></PrivateRoute>},
