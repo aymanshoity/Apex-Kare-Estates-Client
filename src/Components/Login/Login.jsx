@@ -41,7 +41,7 @@ const Login = () => {
                     email: result.user.email,
                     photo: result.user.photoURL,
                 }
-                fetch('http://localhost:5000/accountHolders', {
+                fetch('https://apex-kare-estates-server.vercel.app/accountHolders', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

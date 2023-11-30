@@ -21,13 +21,19 @@ const Navbar = () => {
                 user ? <>
                     <div className="flex flex-row items-center justify-center">
                         <IoLogOutOutline className="text-2xl font-extrabold mr-2" />
+
                         <div className="dropdown text-[#265073] ">
-                            <div tabIndex={0} role="button" className=" m-1"><img className="w-[30px] h-[30px] rounded-full" src={user?.photoURL} alt="" /></div>
-                            <ul className="dropdown-content z-[1] menu p-2 shadow bg-[#ECF4D6] rounded-box w-52 flex flex-col">
-                                <p className="text-xl font-bold">{user.displayName}</p>
-                                <NavLink to='/dashboard' className={({ isActive }) => (isActive ? ' text-xl font-bold  text-[#9AD0C2] mr-4' : ' text-xl  font-bold  mr-4')}>Dashboard</NavLink>
-                                <button onClick={handleLogout} className=" text-xl font-bold">Logout</button>
-                                
+                            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                                <div className="w-10 rounded-full">
+                                <img src={user?.photoURL} alt="" />
+                                </div>
+                            </div>
+        
+                            <ul className="dropdown-content z-[1] menu p-2 shadow bg-[#ECF4D6] rounded-box w-52 lg:flex lg:flex-col">
+                                <li><p className="text-xl font-bold">{user.displayName}</p></li>
+                                <li><NavLink to='/dashboard' className={({ isActive }) => (isActive ? ' text-xl font-bold  text-[#9AD0C2] mr-4' : ' text-xl  font-bold  mr-4')}>Dashboard</NavLink></li>
+                                <li><button onClick={handleLogout} className=" text-xl font-bold">Logout</button></li>
+
                             </ul>
                         </div>
 

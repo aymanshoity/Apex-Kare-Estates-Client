@@ -29,7 +29,7 @@ const AllUsers = () => {
                 const userRole={
                     role:"admin"
                 }
-                fetch(`http://localhost:5000/accountHolders/admin/${user._id}`, {
+                fetch(`https://apex-kare-estates-server.vercel.app/accountHolders/admin/${user._id}`, {
                     method: 'PATCH',
                     headers: {
                         'content-type': 'application/json'

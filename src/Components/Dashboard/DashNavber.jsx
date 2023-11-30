@@ -47,7 +47,7 @@ const DashNavber = () => {
 
         {
             user && isAdmin && <>
-                <NavLink to='/dashboard' className={({ isActive }) => (isActive ? ' text-xl font-bold  text-[#9AD0C2] mr-4' : ' text-xl  font-bold  mr-4')}>Admin-Profile</NavLink>
+                <NavLink to='/dashboard/adminProfile' className={({ isActive }) => (isActive ? ' text-xl font-bold  text-[#9AD0C2] mr-4' : ' text-xl  font-bold  mr-4')}>Admin-Profile</NavLink>
                 {/* <NavLink to='/dashboard/allUsers' className={({ isActive }) => (isActive ? ' text-xl font-bold  text-[#9AD0C2] mr-4' : ' text-xl  font-bold  mr-4')}>Account-Holders</NavLink> */}
                 <NavLink to='/dashboard/manageMembers' className={({ isActive }) => (isActive ? ' text-xl font-bold  text-[#9AD0C2] mr-4' : ' text-xl  font-bold  mr-4')}>Manage-Members</NavLink>
                 <NavLink to='/dashboard/makeAnnouncements' className={({ isActive }) => (isActive ? ' text-xl font-bold  text-[#9AD0C2] mr-4' : ' text-xl  font-bold  mr-4')}>Make-Announcements</NavLink>
@@ -57,8 +57,8 @@ const DashNavber = () => {
         }
 
         {
-            user && isMember && <>
-                <NavLink to='/dashboard' className={({ isActive }) => (isActive ? ' text-xl font-bold  text-[#9AD0C2] mr-4' : ' text-xl  font-bold  mr-4')}>My profile</NavLink>
+            user && !isAdmin && isMember && <>
+                <NavLink to='/dashboard/memberProfile' className={({ isActive }) => (isActive ? ' text-xl font-bold  text-[#9AD0C2] mr-4' : ' text-xl  font-bold  mr-4')}>My profile</NavLink>
                 <NavLink to='/dashboard/announcements' className={({ isActive }) => (isActive ? ' text-xl font-bold  text-[#9AD0C2] mr-4' : ' text-xl  font-bold  mr-4')}>Announcements</NavLink>
                 <NavLink to='/dashboard/makePayment/:id' className={({ isActive }) => (isActive ? ' text-xl font-bold  text-[#9AD0C2] mr-4' : ' text-xl  font-bold  mr-4')}>Make Payment</NavLink>
                 <NavLink to='/dashboard/paymentHistory' className={({ isActive }) => (isActive ? ' text-xl font-bold  text-[#9AD0C2] mr-4' : ' text-xl  font-bold  mr-4')}>Payment-History</NavLink>
@@ -67,8 +67,8 @@ const DashNavber = () => {
             </>
         }
         {
-            user && isUser && <>
-                <NavLink to='/dashboard' className={({ isActive }) => (isActive ? ' text-xl font-bold  text-[#9AD0C2] mr-4' : ' text-xl  font-bold  mr-4')}>My profile</NavLink>
+            user && !isAdmin && isUser && <>
+                <NavLink to='/dashboard/userProfile' className={({ isActive }) => (isActive ? ' text-xl font-bold  text-[#9AD0C2] mr-4' : ' text-xl  font-bold  mr-4')}>My profile</NavLink>
                 <NavLink to='/dashboard/announcements' className={({ isActive }) => (isActive ? ' text-xl font-bold  text-[#9AD0C2] mr-4' : ' text-xl  font-bold  mr-4')}>Announcements</NavLink>
             </>
         }

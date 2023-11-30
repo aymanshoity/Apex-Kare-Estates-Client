@@ -42,19 +42,19 @@ const Routes = createBrowserRouter([
     
     children: [
       // { path: '/dashboard/allUsers', element: <AdminRoute><AllUsers></AllUsers></AdminRoute>},
-      { path: '/dashboard', element: <AdminRoute><AdminProfile></AdminProfile></AdminRoute>},
+      { path: '/dashboard/adminProfile', element: <AdminRoute><AdminProfile></AdminProfile></AdminRoute>},
       { path: '/dashboard/agreementRequests', element:<AdminRoute><AgreementRequests></AgreementRequests></AdminRoute>},
       { path: '/dashboard/makeAnnouncements', element:<AdminRoute><MakeAnnouncement></MakeAnnouncement></AdminRoute>},
       { path: '/dashboard/manageMembers', element:<AdminRoute><ManageMembers></ManageMembers></AdminRoute>},
       { path: '/dashboard/manageCoupons', element:<AdminRoute><ManageCoupon></ManageCoupon></AdminRoute>},
       { path: '/dashboard/announcements', element:<PrivateRoute><Announcements></Announcements></PrivateRoute>},
-      { path: '/dashboard', element:<PrivateRoute><MemberProfile></MemberProfile> </PrivateRoute>},
+      { path: '/dashboard/memberProfile', element:<PrivateRoute><MemberProfile></MemberProfile> </PrivateRoute>},
       { path: '/dashboard/makePayment/:id', element:<PrivateRoute><MakePayment></MakePayment> </PrivateRoute>,
       loader:({params})=>fetch(`http://localhost:5000/apartments/${params.id}`)},
       { path: '/dashboard/payment/:id', element:<PrivateRoute> <Payment></Payment> </PrivateRoute>,
       loader:({params})=>fetch(`http://localhost:5000/apartments/${params.id}`)},
       { path: '/dashboard/paymentHistory', element:<PrivateRoute><PaymentHistory></PaymentHistory> </PrivateRoute>},
-      { path: '/dashboard', element:<PrivateRoute> <UserProfile></UserProfile></PrivateRoute>},
+      { path: '/dashboard/userProfile', element:<PrivateRoute> <UserProfile></UserProfile></PrivateRoute>},
     ]
   },
 ]);

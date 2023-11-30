@@ -33,10 +33,10 @@ const UserProfile = () => {
                 </div>
                 <div className="card md:flex-1  bg-[#ECF4D6] mx-5 md:mx-10 lg:mx-20 shadow-xl">
                     <div className="card-body text-[#265073] font-bold">
-                        <h2 className="card-title">Apartment No:{userprofile.apartmentNo}</h2>
-                        <p>Block Name: {userprofile.blockName}</p>
-                        <p>Floor No: {userprofile.floorNo}</p>
-                        <p>Rent: {userprofile.rent}$ </p>
+                        <h2 className="card-title">Apartment No:none</h2>
+                        <p>Block Name: none</p>
+                        <p>Floor No: none</p>
+                        <p>Rent: none </p>
                         <p>Status: {userprofile.status} </p>
                         
                     </div>
