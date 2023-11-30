@@ -3,7 +3,7 @@ import { FaGoogle } from "react-icons/fa6";
 import { AuthContext } from "../Provider/AuthProvider";
 import { useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-
+// https://apex-kare-estates-server.vercel.app
 const GoogleLogin = () => {
     const {  googleSignIn } = useContext(AuthContext)
     const location = useLocation()

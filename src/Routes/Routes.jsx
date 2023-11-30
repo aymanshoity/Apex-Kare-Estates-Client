@@ -50,9 +50,9 @@ const Routes = createBrowserRouter([
       { path: '/dashboard/announcements', element:<PrivateRoute><Announcements></Announcements></PrivateRoute>},
       { path: '/dashboard/memberProfile', element:<PrivateRoute><MemberProfile></MemberProfile> </PrivateRoute>},
       { path: '/dashboard/makePayment/:id', element:<PrivateRoute><MakePayment></MakePayment> </PrivateRoute>,
-      loader:({params})=>fetch(`http://localhost:5000/apartments/${params.id}`)},
+      loader:({params})=>fetch(`https://apex-kare-estates-server.vercel.app/apartments/${params.id}`)},
       { path: '/dashboard/payment/:id', element:<PrivateRoute> <Payment></Payment> </PrivateRoute>,
-      loader:({params})=>fetch(`http://localhost:5000/apartments/${params.id}`)},
+      loader:({params})=>fetch(`https://apex-kare-estates-server.vercel.app/apartments/${params.id}`)},
       { path: '/dashboard/paymentHistory', element:<PrivateRoute><PaymentHistory></PaymentHistory> </PrivateRoute>},
       { path: '/dashboard/userProfile', element:<PrivateRoute> <UserProfile></UserProfile></PrivateRoute>},
     ]

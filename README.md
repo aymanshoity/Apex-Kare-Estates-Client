@@ -11,7 +11,7 @@ Client Side Github Repository Link: https://github.com/programming-hero-web-cour
 
 Server Side Github Repository Link:https://github.com/programming-hero-web-course1/b8a12-server-side-aymanshoity
 
-We have buit an website on Building Management
+We have built an website on Building Management
 
 Let us think that my owner has  a building in Gulshan and want me to build a website
 We named the website as Apex-Kare-Estates
