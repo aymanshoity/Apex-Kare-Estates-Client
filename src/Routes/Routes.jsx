@@ -18,6 +18,7 @@ import MakeAnnouncement from "../Components/Dashboard/Announcements/MakeAnnounce
 import UserProfile from "../Components/Dashboard/User/UserProfile";
 import ManageMembers from "../Components/Dashboard/ManageMembers/ManageMembers";
 import ManageCoupon from "../Components/Dashboard/ManageCoupon/ManageCoupon";
+import AdminProfile from "../Components/Dashboard/AdminProfile/AdminProfile";
 
 const Routes = createBrowserRouter([
   {
@@ -37,7 +38,8 @@ const Routes = createBrowserRouter([
     errorElement: <ErrorPage></ErrorPage>,
     
     children: [
-      { path: '/dashboard/allUsers', element: <AdminRoute><AllUsers></AllUsers></AdminRoute>},
+      // { path: '/dashboard/allUsers', element: <AdminRoute><AllUsers></AllUsers></AdminRoute>},
+      { path: '/dashboard/adminProfile', element: <AdminRoute><AdminProfile></AdminProfile></AdminRoute>},
       { path: '/dashboard/agreementRequests', element:<AdminRoute><AgreementRequests></AgreementRequests></AdminRoute>},
       { path: '/dashboard/makeAnnouncements', element:<AdminRoute><MakeAnnouncement></MakeAnnouncement></AdminRoute>},
       { path: '/dashboard/manageMembers', element:<AdminRoute><ManageMembers></ManageMembers></AdminRoute>},

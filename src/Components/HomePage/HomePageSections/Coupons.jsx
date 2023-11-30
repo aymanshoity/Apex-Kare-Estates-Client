@@ -13,7 +13,7 @@ const Coupons = ({coupons}) => {
                 <p className='text-[#ECF4D6]'>{description}</p>
                 <p className='text-[#ECF4D6]'>Why are you waiting? hurry!!</p>
                 <div className="card-actions justify-end">
-                    <Link to='/apartments'><button className="btn bg-[#9AD0C2] text-[#265073] rounded-full fancy text-2xl">Rent Today</button></Link>
+                    <Link to='/apartments'><button className="btn bg-[#9AD0C2] text-[#265073] rounded-full fancy text-2xl">Grab it Today</button></Link>
                 </div>
 
             </div>

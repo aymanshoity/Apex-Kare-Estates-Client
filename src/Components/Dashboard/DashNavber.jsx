@@ -48,7 +48,7 @@ const DashNavber = () => {
         {
             user && isAdmin && <>
                 <NavLink to='/dashboard/adminProfile' className={({ isActive }) => (isActive ? ' text-xl font-bold  text-[#9AD0C2] mr-4' : ' text-xl  font-bold  mr-4')}>Admin-Profile</NavLink>
-                <NavLink to='/dashboard/allUsers' className={({ isActive }) => (isActive ? ' text-xl font-bold  text-[#9AD0C2] mr-4' : ' text-xl  font-bold  mr-4')}>Account-Holders</NavLink>
+                {/* <NavLink to='/dashboard/allUsers' className={({ isActive }) => (isActive ? ' text-xl font-bold  text-[#9AD0C2] mr-4' : ' text-xl  font-bold  mr-4')}>Account-Holders</NavLink> */}
                 <NavLink to='/dashboard/manageMembers' className={({ isActive }) => (isActive ? ' text-xl font-bold  text-[#9AD0C2] mr-4' : ' text-xl  font-bold  mr-4')}>Manage-Members</NavLink>
                 <NavLink to='/dashboard/makeAnnouncements' className={({ isActive }) => (isActive ? ' text-xl font-bold  text-[#9AD0C2] mr-4' : ' text-xl  font-bold  mr-4')}>Make-Announcements</NavLink>
                 <NavLink to='/dashboard/agreementRequests' className={({ isActive }) => (isActive ? ' text-xl font-bold  text-[#9AD0C2] mr-4' : ' text-xl  font-bold  mr-4')}>Agreement-Requests</NavLink>
