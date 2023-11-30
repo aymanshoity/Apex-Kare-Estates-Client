@@ -4,7 +4,6 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import SharedHeadings from "../../SharedComponents/SharedHeadings";
 import { useQuery } from "@tanstack/react-query";
 import UseAxiosPublic from "../../../Hooks/UseAxiosPublic";
-import { MdOutlineApartment } from "react-icons/md";
 import { FaBuilding } from "react-icons/fa";
 import { MdOutlineEventAvailable } from "react-icons/md";
 import { CgUnavailable } from "react-icons/cg";

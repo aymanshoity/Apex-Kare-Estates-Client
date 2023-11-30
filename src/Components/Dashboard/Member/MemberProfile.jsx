@@ -3,6 +3,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import { useQuery } from "@tanstack/react-query";
 import UseAxiosSecure from "../../../Hooks/UseAxiosSecure";
 import SharedHeadings from "../../SharedComponents/SharedHeadings";
+import { Link } from "react-router-dom";
 
 
 const MemberProfile = () => {
@@ -41,7 +42,7 @@ const MemberProfile = () => {
                         <p>Rent: {profile.rent}$ </p>
                         <p>Status: {profile.status} </p>
                         <div className="card-actions justify-start">
-                            <button className="btn bg-[#265073] text-[#ECF4D6]">Pay Now</button>
+                            <Link to={`/dashboard/makePayment/${profile.apartmentId}`}><button className="btn bg-[#265073] text-[#ECF4D6]">Pay Now</button></Link>
                         </div>
                     </div>
 
