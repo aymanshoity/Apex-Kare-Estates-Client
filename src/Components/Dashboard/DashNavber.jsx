@@ -16,13 +16,14 @@ const DashNavber = () => {
     const [isMember, setMember] = useState(false)
     const [isUser, setUser] = useState(false)
     const axiosSecure = UseAxiosSecure()
-    const { data: requests = [], refetch } = useQuery({
+    const { data: requests = [],} = useQuery({
         queryKey: ['requests'],
         queryFn: async() => {
             const res = await axiosSecure.get('/agreementRequests')
             return res.data
         }
     })
+    
     useEffect(() => {
         if (!isAdmin) {
             const findMember = requests.find(request => request.email === user.email)

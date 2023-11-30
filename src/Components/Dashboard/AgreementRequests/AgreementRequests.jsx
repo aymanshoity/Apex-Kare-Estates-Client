@@ -11,10 +11,10 @@ const AgreementRequests = () => {
         queryKey: ['requests'],
         queryFn: async () => {
             const res = await axiosSecure.get('/agreementRequests')
-            refetch()
             return res.data
         }
     })
+
     const handleAccept = (request) => {
         Swal.fire({
             title: "Are you sure ,you want to accept the request?",
@@ -27,24 +27,54 @@ const AgreementRequests = () => {
         }).then((result) => {
             const userRole = {
                 role: "member",
-                status:"accepted"
+                status: "accepted"
             }
             if (result.isConfirmed) {
-                axiosSecure.patch(`/agreementRequests/admin/${request._id}`,userRole)
-                .then(res=>{
-                    console.log(res.data)
-                    if (res.data.modifiedCount > 0) {
-                        Swal.fire({
-                            title: "Accepted!",
-                            text: "The request has been accepted.",
-                            icon: "success"
-                        });
-                        
-                    }
-                })
-                .catch(error => {
-                    console.error('Error updating user profile:', error.response.data);
-                  });
+                axiosSecure.patch(`/agreementRequests/admin/${request._id}`, userRole)
+                    .then(res => {
+                        console.log(res.data)
+                        if (res.data.modifiedCount > 0) {
+                            Swal.fire({
+                                title: "Accepted!",
+                                text: "The request has been accepted.",
+                                icon: "success"
+                            });
+                            refetch()
+                            axiosSecure.get(`/agreementRequests/admin/${request._id}`)
+                                .then(res => {
+                                    const data=res.data
+                                    console.log(data)
+                                    const memberInfo = {
+                                        userId:data._id,
+                                        apartmentId: data.apartmentId,
+                                        name: data.displayName,
+                                        email: data.email,
+                                        photo: data.photoURL,
+                                        floorNo: data.floorNo,
+                                        blockName: data.blockName,
+                                        apartmentNo: data.apartmentNo,
+                                        rent: data.rent,
+                                        date: data.date,
+                                        role: data.role,
+                                        status: data.status,
+                                    }
+                                    axiosSecure.post('/members', memberInfo)
+                                        .then(res => {
+                                            console.log(res.data)
+                                            if (res.data.insertedId) {
+                                                Swal.fire({
+                                                    title: `User has been promoted to member`,
+                                                    timer: 3000
+                                                });
+
+                                            }
+                                        })
+                                })
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error updating user profile:', error.response.data);
+                    });
 
 
             }
@@ -61,26 +91,26 @@ const AgreementRequests = () => {
             confirmButtonText: "Yes, Reject it!"
         }).then((result) => {
             const userRole = {
-                role:"user",
-                status:"rejected"
+                role: "user",
+                status: "rejected"
             }
             if (result.isConfirmed) {
-                axiosSecure.patch(`/agreementRequests/admin/${request._id}`,userRole)
-                .then(res=>{
-                    console.log(res.data)
-                    if (res.data.modifiedCount > 0) {
-                        Swal.fire({
-                            title: "Rejected!",
-                            text: "The request has been rejected.",
-                            icon: "success"
-                        });
-                        refetch()
-                    }
-                })
-                .catch(error => {
-                    console.error('Error updating user profile:', error.response.data);
-                  });
-                
+                axiosSecure.patch(`/agreementRequests/admin/${request._id}`, userRole)
+                    .then(res => {
+                        console.log(res.data)
+                        if (res.data.modifiedCount > 0) {
+                            Swal.fire({
+                                title: "Rejected!",
+                                text: "The request has been rejected.",
+                                icon: "success"
+                            });
+                            refetch()
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error updating user profile:', error.response.data);
+                    });
+
 
 
             }
@@ -88,7 +118,7 @@ const AgreementRequests = () => {
 
     }
     return (
-        <div className="py-40">
+        <div className="py-40 ">
             <SharedHeadings heading={'Agreement Requests'} subheading={"Let's see"}></SharedHeadings>
             <h2 className="text-2xl text-center text-[#265073]">Total Requests: {requests.length}</h2>
             <div className="grid grid-cols-1 lg:grid-cols-2 ">
