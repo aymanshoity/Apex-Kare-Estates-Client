@@ -40,6 +40,7 @@ const Routes = createBrowserRouter([
       { path: '/dashboard/agreementRequests', element:<AdminRoute><AgreementRequests></AgreementRequests></AdminRoute>},
       { path: '/dashboard/makeAnnouncements', element:<AdminRoute><MakeAnnouncement></MakeAnnouncement></AdminRoute>},
       { path: '/dashboard/manageMembers', element:<AdminRoute><ManageMembers></ManageMembers></AdminRoute>},
+      { path: '/dashboard/manageCoupons', element:<AdminRoute><ManageMembers></ManageMembers></AdminRoute>},
       { path: '/dashboard/announcements', element:<PrivateRoute><Announcements></Announcements></PrivateRoute>},
       { path: '/dashboard/memberProfile', element:<PrivateRoute> <MemberProfile></MemberProfile></PrivateRoute>},
       { path: '/dashboard/userProfile', element:<PrivateRoute> <UserProfile></UserProfile></PrivateRoute>},

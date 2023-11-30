@@ -47,7 +47,7 @@ const AgreementRequests = () => {
                                     const memberInfo = {
                                         userId:data._id,
                                         apartmentId: data.apartmentId,
-                                        name: data.displayName,
+                                        name: data.name,
                                         email: data.email,
                                         photo: data.photoURL,
                                         floorNo: data.floorNo,
