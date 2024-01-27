@@ -41,9 +41,9 @@ const MemberProfile = () => {
                         <p>Floor No: {profile.floorNo}</p>
                         <p>Rent: {profile.rent}$ </p>
                         <p>Status: {profile.status} </p>
-                        <div className="card-actions justify-start">
+                        {/* <div className="card-actions justify-start">
                             <Link to={`/dashboard/makePayment/${profile.apartmentId}`}><button className="btn bg-[#265073] text-[#ECF4D6]">Pay Now</button></Link>
-                        </div>
+                        </div> */}
                     </div>
 
 

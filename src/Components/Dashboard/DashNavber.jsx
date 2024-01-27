@@ -16,18 +16,20 @@ const DashNavber = () => {
     const [isMember, setMember] = useState(false)
     const [isUser, setUser] = useState(false)
     const axiosSecure = UseAxiosSecure()
-    const { data: requests = [],} = useQuery({
+    const { data: requests = [], } = useQuery({
         queryKey: ['requests'],
-        queryFn: async() => {
+        queryFn: async () => {
             const res = await axiosSecure.get('/agreementRequests')
             return res.data
         }
     })
-    
+
     useEffect(() => {
         if (!isAdmin) {
-            const findMember = requests.find(request => request.email === user.email)
+            const findMember = requests.find(request => request?.email === user.email)
             console.log(findMember)
+            setMember(false)
+            setUser(false)
             if (findMember?.role === "member") {
                 return setMember(true)
             }
@@ -39,7 +41,7 @@ const DashNavber = () => {
 
 
 
-    }, [user.email, requests,isAdmin])
+    }, [user.email, requests, isAdmin])
 
 
     const navLinks = <>
@@ -57,17 +59,17 @@ const DashNavber = () => {
         }
 
         {
-            user && !isAdmin && isMember && <>
+            user && isMember && <>
                 <NavLink to='/dashboard/memberProfile' className={({ isActive }) => (isActive ? ' text-xl font-bold  text-[#9AD0C2] mr-4' : ' text-xl  font-bold  mr-4')}>My profile</NavLink>
                 <NavLink to='/dashboard/announcements' className={({ isActive }) => (isActive ? ' text-xl font-bold  text-[#9AD0C2] mr-4' : ' text-xl  font-bold  mr-4')}>Announcements</NavLink>
-                <NavLink to='/dashboard/makePayment/:id' className={({ isActive }) => (isActive ? ' text-xl font-bold  text-[#9AD0C2] mr-4' : ' text-xl  font-bold  mr-4')}>Make Payment</NavLink>
+                <NavLink to='/dashboard/makePayment' className={({ isActive }) => (isActive ? ' text-xl font-bold  text-[#9AD0C2] mr-4' : ' text-xl  font-bold  mr-4')}>Make Payment</NavLink>
                 <NavLink to='/dashboard/paymentHistory' className={({ isActive }) => (isActive ? ' text-xl font-bold  text-[#9AD0C2] mr-4' : ' text-xl  font-bold  mr-4')}>Payment-History</NavLink>
 
 
             </>
         }
         {
-            user && !isAdmin && isUser && <>
+            user && isUser && <>
                 <NavLink to='/dashboard/userProfile' className={({ isActive }) => (isActive ? ' text-xl font-bold  text-[#9AD0C2] mr-4' : ' text-xl  font-bold  mr-4')}>My profile</NavLink>
                 <NavLink to='/dashboard/announcements' className={({ isActive }) => (isActive ? ' text-xl font-bold  text-[#9AD0C2] mr-4' : ' text-xl  font-bold  mr-4')}>Announcements</NavLink>
             </>
@@ -107,6 +109,7 @@ const DashNavber = () => {
             </div>
 
         </div>
+       
     );
 };
 

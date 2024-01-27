@@ -1,20 +1,45 @@
 
 import { useContext } from "react";
 import SharedHeadings from "../SharedComponents/SharedHeadings";
-import { Link, useLoaderData, useParams } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
+import UseAxiosSecure from "../../Hooks/UseAxiosSecure";
+import { useQuery } from "@tanstack/react-query";
 
 
 const MakePayment = () => {
     const { user } = useContext(AuthContext)
-    const { id } = useParams()
-    const data = useLoaderData()
-    console.log(data, id)
+    const axiosSecure=UseAxiosSecure()
+    const {data: profile=[]}=useQuery({
+        queryKey: ['profile'],
+        queryFn: async ()=>{
+            const res= await axiosSecure.get(`/members/${user?.email}`)
+            return res.data
+        }
+    })
+    const navigate=useNavigate()
+    console.log(profile)
+    const handleProceed=(e)=>{
+        e.preventDefault()
+        const form=e.target;
+        const email=form.email.value
+        const name=profile.name
+        const apartmentId=profile.apartmentId
+        const apartmentNo=form.apartmentNo.value
+        const floorNo=form.floor.value
+        const blockName=form.block.value
+        const rent=form.rent.value
+        const month=form.month.value
+        const date=new Date().toLocaleString().split(',')[0];
+        const data={email,name,apartmentNo,apartmentId,floorNo,blockName,rent,month,date}
+        navigate('/dashboard/payment', {state:{data:data}})
+    }
+
     return (
         <div className="py-40">
             <SharedHeadings subheading={"It's time to pay"} heading={'Make Payment'}></SharedHeadings>
             <div className="mx-5 md:mx-10 lg:mx-20">
-                <form className="card-body">
+                <form onSubmit={handleProceed} className="card-body">
                     <div className="grid grid-cols-1 md:grid-cols-2 justify-center gap-5">
                         <div className="form-control">
                             <label className="label">
@@ -26,25 +51,25 @@ const MakePayment = () => {
                             <label className="label">
                                 <span className="label-text">Apartment No.</span>
                             </label>
-                            <input type="text" name="apartmentNo" disabled defaultValue={data.apartmentNo} placeholder="Apartment No." className="input input-bordered" required />
+                            <input type="text" name="apartmentNo" disabled defaultValue={profile.apartmentNo} placeholder="Apartment No." className="input input-bordered" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Floor No.</span>
                             </label>
-                            <input type="text" name="floor" disabled defaultValue={data.floorNo} placeholder="Floor No." className="input input-bordered" required />
+                            <input type="text" name="floor" disabled defaultValue={profile.floorNo} placeholder="Floor No." className="input input-bordered" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Block Name</span>
                             </label>
-                            <input type="text" name="block" disabled defaultValue={data.blockName} placeholder="Block Name" className="input input-bordered" required />
+                            <input type="text" name="block" disabled defaultValue={profile.blockName} placeholder="Block Name" className="input input-bordered" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Rent($)</span>
                             </label>
-                            <input type="text" name="rent" disabled defaultValue={data.rent} className="input input-bordered" required />
+                            <input type="text" name="rent" disabled defaultValue={profile.rent} className="input input-bordered" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
@@ -55,7 +80,7 @@ const MakePayment = () => {
                     </div>
 
                     <div className="form-control mt-6">
-                        <Link to={`/dashboard/payment/${data.id}`}><button  className="btn bg-[#265073] text-[#ECF4D6]">Pay</button></Link>
+                        <button  className="btn bg-[#265073] w-full text-[#ECF4D6]">Proceed</button>
                     </div>
                 </form>
             </div>
